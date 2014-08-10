@@ -1,4 +1,4 @@
-from BruteListBuilder import ListMaker
+from libs.BruteListBuilder import ListMaker
 from sys import stdout, argv
 from time import time
 import hashlib
@@ -15,7 +15,7 @@ class crack:
 		stdout.write('\r'+word+" = ? "+hash) 
 		if (hash==self.hash):
 			print("\nFOUND: "+word)
-			open("LastCracked.txt","a").write(word+" = "+self.hash)
+			open("\nLastCracked.txt","a").write(word+" = "+self.hash)
 			exit()
 
 class build:
@@ -35,7 +35,7 @@ class build:
 		self.words.append(word)
 		self.hashs.append(hash)
 		
-		if (time()-self.lastSave>30):
+		if (time()-self.lastSave>200):
 			toWrite = ""
 			#building file
 			for x in range(len(self.words)):

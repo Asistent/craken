@@ -64,11 +64,13 @@ def readDict(folder,hashx,n=1):
 		return ""
 	for line in data:
 		try:
-			hash = line.split("\t")[0]
-			word = line.split("\t")[1]
-			if (hash == hashx):
-				return word
+			if line:
+				hash = line.split("\t")[0]
+				word = line.split("\t")[1]
+				if (hash == hashx):
+					return word
 		except IndexError:
+			print("'"+line+"'")
 			print("[*] ERROR: File corrupted?\nPassing...")
 	readDict(folder,hashx,n+1)
 

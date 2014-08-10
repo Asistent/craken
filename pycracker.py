@@ -1,4 +1,4 @@
-from libs.BruteListBuilder import ListMaker
+from api.BruteListBuilder import ListMaker
 from sys import stdout, argv
 from time import time
 import hashlib
